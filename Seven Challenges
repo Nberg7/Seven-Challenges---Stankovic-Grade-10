@@ -1,0 +1,101 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+int questionValue;
+
+cout << "What challenge would you like to see first? (1-7).\n";
+cin >> questionValue;
+
+int numberA, numberB, numberC, tempValue;
+float rolls;
+float digit[5];
+
+switch(questionValue) {
+    case 1:
+
+        cout << "You have chosen the first challenge: \nWrite a program that reads in two integers, adds them and prints their sum on the screen.\n";
+        cout << "Please enter two integers.\n";
+        cin >> numberA;
+        cin >> numberB;
+        cout << "The sum is " << numberA + numberB << endl;
+    break;
+
+    case 2:
+
+        cout << "You have chosen the second challenge: \nWrite a program that asks the user to enter two numbers and print the sum, product,\ndifference, quotient and remainder of the two numbers.\n";
+        cout << "Please enter two integers\n";
+        cin >> numberA;
+        cin >> numberB;
+        cout << "The sum is " << numberA + numberB << endl;
+        cout << "The product is " << numberA * numberB << endl;
+        cout << "The difference is " << numberA - numberB << endl;
+        cout << "The quotient is " << numberA / numberB << endl;
+        cout << "The remainder is " << numberA % numberB << endl;
+    break;
+
+    case 3:
+        cout << "You have chosen the third challenge: \nWrite a program that will share equally n cookies among m children. \nThe program should display how many cookies each child is going to get and how many cookies will remain.\n";
+        cout << "\nPlease enter two integers, the first is the cookies, the second is the children\n";
+        cin >> numberA;
+        cin >> numberB;
+        cout << "Each child gets " << (numberA - (numberA % numberB)) / numberB  << " and a remainder of " << numberA % numberB << endl;
+    break;
+
+    case 4:
+        cout << "You have chosen the fourth challenge: \nWrite a program that enters the lengths of the sides of a rectangle and outputs the area of the rectangle.\n";
+        cout << "\nPlease enter two intergers for the sides of the rectangle in meters\n";
+        cin >> numberA;
+        cin >> numberB;
+        cout << "The area of the rectangle is " << numberA * numberB << " m2\n";
+    break;
+
+    case 5:
+        cout << "You have chosen the fifth challenge: \nWrite a program that calculates how many standard rolls of wallpaper (width is 21 inch, length is 33 feet) \n are needed to paper a room. Let the user enter the dimensions of the room.\n";
+        cout << "\nPlease enter three intergers for the sides of the room in inches,, first number is width, second is length, and third is height\n";
+        cin >> numberA;
+        cin >> numberB;
+        cin >> numberC;
+        rolls = (((numberA * 2) + (numberB * 2)) * numberC) / 693;
+        rolls++;
+        cout << "The amount of rolls needed is " << rolls << " rolls\n";
+    break;
+
+    case 6:
+        cout << "You have chosen the sixth challenge: \nWrite a program that reads in two integers a and b and swaps their values.\n";
+        cout << "Please enter two integers.\n";
+        cin >> numberA;
+        cin >> numberB;
+        tempValue = numberB;
+        numberB = numberA;
+        numberA = tempValue;
+        cout << "The first number is " << numberA << " .The second number is " << numberB  << ".\n";
+    break;
+
+    case 7:
+        cout << "You have chosen the seventh challenge: \nWrite a program that inputs a five digit number, separates the number into its individual digits\nand prints the digits separated from one another.\nNow put the five digit number together and output it reversed.\n";
+        cout << "Please enter the five digit integers.\n";
+        cin >> numberA;
+        digit[0] = floor(numberA / 10000);
+        numberA -= digit[0] * 10000;
+        digit[1] = floor(numberA / 1000);
+        numberA -= digit[1] * 1000;
+        digit[2] = floor(numberA / 100);
+        numberA -= digit[2] * 100;
+        digit[3] = floor(numberA / 10);
+        numberA -= digit[3] * 10;\
+        digit[4] = floor(numberA / 1);
+        numberA -= digit[4] * 1;
+
+        cout << "The numbers: " << digit[0] << " "  << digit[1] << " " << digit[2] << " " << digit[3] << " " << digit[4] << "\n";
+        cout << "The numbers reversed are: " << digit[4] << ", " << digit[3] << ", " << digit[2] << ", " << digit[1] << ", " << digit[0] << ".\n";
+        break;
+
+    default:
+       cout << "You have entered a number not between 1-7 - Please start programm again\n";
+    break;
+}
+
+}
